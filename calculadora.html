@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Imposto de Renda</title>
+    <link rel="stylesheet" href="Css/index.css">
+    <link rel="stylesheet" href="Css/calculadora.css">
+    <script src="Js/calculadora.js" defer></script>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="oqueeimpostoderenda.html">O que é?</a></li>
+            <li><a href="tabelavigente.html">Tabela Vigente</a></li>
+            <li><a href="calculadora.html">Calculadora</a></li>
+            <li><a href="perguntasfrequentes.html">Perguntas Frequentes</a></li>
+        </ul>
+    </header>
+
+    <div class="calculadora-container">
+        <h1>Calculadora de Imposto de Renda</h1>
+        <p>Utilize esta calculadora para estimar o valor do seu imposto de renda. Note que esta é uma calculadora simples e os resultados podem variar conforme as particularidades de cada caso.</p>
+        
+        <div class="calculadora">
+            <h2>Cálculo Mensal</h2>
+            <label for="salario">Salário Mensal:</label>
+            <input type="number" id="salario" placeholder="Digite seu salário mensal">
+            <label for="dependentes">Número de Dependentes:</label>
+            <input type="number" id="dependentes" placeholder="Digite o número de dependentes">
+            <label for="pensao">Pensão Alimentícia:</label>
+            <input type="number" id="pensao" placeholder="Digite o valor da pensão alimentícia">
+            
+            <p>Tipo de Contribuinte INSS:</p>
+            <label><input type="radio" name="tipoINSS" value="clt" checked> Trabalhador CLT</label><br>
+            <label><input type="radio" name="tipoINSS" value="mei_5"> MEI (5%)</label><br>
+            <label><input type="radio" name="tipoINSS" value="mei_11"> MEI (11%)</label><br>
+            <label><input type="radio" name="tipoINSS" value="mei_12"> MEI (12%)</label><br>
+            <label><input type="radio" name="tipoINSS" value="individual"> Contribuinte Individual</label><br>
+
+            <label for="inss">INSS (calculado automaticamente):</label>
+            <input type="number" id="inss" placeholder="Valor do INSS" readonly>
+
+            <button onclick="calcularImpostoMensal()">Calcular Imposto Mensal</button>
+
+            <p id="resultadoMensal"></p>
+        </div>
+
+        <div class="calculadora">
+            <h2>Cálculo Anual</h2>
+            <label for="rendimentoAnual">Rendimento Anual:</label>
+            <input type="number" id="rendimentoAnual" placeholder="Digite seu rendimento anual">
+            <button onclick="calcularImpostoAnual()">Calcular Imposto Anual</button>
+            <p id="resultadoAnual"></p>
+        </div>
+    </div>
+</body>
+</html>
